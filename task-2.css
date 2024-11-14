@@ -1,0 +1,484 @@
+:root {
+    /* Define color variables for easy theme management */
+    --clr1: #070410; /* Dark background color */
+    --clr2: #ffffff; /* Light text color */
+    --clr3: #231651; /* Navbar and card background color */
+    --clr4: #4dccbd; /* Button background color */
+    --clr5: #eef36a; /* Button hover color */
+}
+
+html, body {
+    /* Set default styles for the entire document */
+    background-color: var(--clr1); /* Use dark background */
+    font-family: 'Lato', sans-serif; /* Set default font */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    text-align: center; /* Center align all content */
+    min-width: 360px; /* Minimum width for mobile devices */
+    font-size: 16px; /* Base font size */
+}
+
+button {
+    /* Style for all buttons */
+    font-size: 1.5em; /* Larger font size for buttons */
+    letter-spacing: 0; /* No additional spacing between letters */
+    font-family: "Teko", sans-serif; /* Font for buttons */
+}
+
+p {
+    /* Style for all paragraphs */
+    font-size: 1em; /* Standard font size for paragraphs */
+    font-family: "Lato", sans-serif; /* Consistent font style */
+}
+
+.navbar {
+    /* Style for the navigation bar */
+    display: flex; /* Flexbox layout for navbar */
+    justify-content: space-between; /* Space out items evenly */
+    align-items: center; /* Center items vertically */
+    padding: 1em; /* Padding around navbar content */
+    background-color: var(--clr3); /* Dark background for navbar */
+}
+
+.navbar .logo {
+    /* Style for the logo section in the navbar */
+    margin-left: 2em; /* Space on the left side of the logo */
+}
+
+.navbar .logo a {
+    /* Style for the logo link */
+    font-family: 'Teko', sans-serif; /* Font for logo */
+    font-weight: bold; /* Bold text for emphasis */
+    text-transform: uppercase; /* Uppercase text */
+    font-size: 3em; /* Large font size for logo */
+    color: var(--clr2); /* Light text color */
+    text-decoration: none; /* Remove underline from link */
+}
+
+.navbar .nav-links {
+    /* Style for the navigation links */
+    display: flex; /* Flexbox layout for links */
+    justify-content: center; /* Center align links */
+    flex-grow: 1; /* Allow links to grow */
+}
+
+.navbar .nav-links a {
+    /* Style for each navigation link */
+    font-family: 'Teko', sans-serif; /* Font for links */
+    font-size: 2em; /* Font size for links */
+    color: var(--clr2); /* Light text color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 1em; /* Space between links */
+}
+
+.navbar .search {
+    /* Style for the search section in the navbar */
+    display: flex; /* Flexbox layout for search */
+    align-items: center; /* Center items vertically */
+    margin-right: 2em; /* Space on the right side of the search */
+}
+
+.navbar .search input {
+    /* Style for the search input field */
+    font-family: 'Lato', sans-serif; /* Font for input */
+    font-size: 1em; /* Font size for input */
+    padding: 0.5em; /* Padding inside input */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners for input */
+    margin-left: 0.5em; /* Space on the left side of the input */
+}
+
+.banner {
+    /* Style for the banner section */
+    position: relative; /* Position relative for overlay content */
+    width: 100%; /* Full width */
+}
+
+.banner img {
+    /* Style for the banner image */
+    position: relative; /* Position relative for image */
+    object-fit: cover; /* Cover entire area */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    filter: brightness(0.7); /* Darken image for contrast */
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 400px; /* Limit height */
+}
+
+.banner-content {
+    /* Style for the content over the banner */
+    position: absolute; /* Position absolute for overlay */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center content */
+    text-align: center; /* Center align text */
+    color: var(--clr2); /* Light text color */
+    padding: 0; /* Remove padding */
+    margin-top: 20px; /* Space above content */
+}
+
+.banner-content h1 {
+    /* Style for the main heading in the banner */
+    font-size: 3em; /* Large font size */
+    font-weight: bold; /* Bold text for emphasis */
+    text-transform: uppercase; /* Uppercase text */
+    text-shadow: 2px 2px var(--clr1); /* Shadow for contrast */
+    margin: 20px; /* Space around heading */
+    margin-top: 40px; /* Additional space above heading */
+}
+
+.banner-content h2 {
+    /* Style for the subheading in the banner */
+    font-size: 1.5em; /* Font size for subheading */
+    font-weight: bold; /* Bold text for emphasis */
+    text-transform: uppercase; /* Uppercase text */
+    text-shadow: 2px 2px var(--clr1); /* Shadow for contrast */
+    margin-bottom: 100px; /* Space below subheading */
+}
+
+.movie-grid {
+    /* Style for the grid layout of movie cards */
+    display: grid; /* Grid layout for movies */
+    grid-template-columns: 1fr; /* Single column layout */
+    row-gap: 24px; /* Space between rows */
+    margin: 24px 0; /* Space above and below grid */
+}
+
+.movie-card {
+    /* Style for each movie card */
+    display: grid; /* Grid layout for card */
+    grid-template-columns: 1fr; /* Single column layout */
+    row-gap: 16px; /* Space between rows */
+    width: 100%; /* Full width */
+    max-width: 1000px; /* Limit width */
+    border: solid var(--clr1) 2px; /* Border for card */
+    background-color: var(--clr3); /* Background color for card */
+    margin: 0 auto; /* Center align card */
+}
+
+.image-container {
+    /* Style for the image container in movie cards */
+    overflow: hidden; /* Hide overflow */
+}
+
+.image-container img {
+    /* Style for images in movie cards */
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.details {
+    /* Style for the details section in movie cards */
+    display: grid; /* Grid layout for details */
+    grid-template-columns: 1fr; /* Single column layout */
+    align-items: center; /* Center align items */
+    row-gap: 16px; /* Space between rows */
+    padding: 16px; /* Padding around details */
+}
+
+.details p {
+    /* Style for paragraphs in the details section */
+    margin: 0; /* Remove margin */
+    color: var(--clr2); /* Light text color */
+    font-size: 1.5em; /* Font size for paragraphs */
+}
+
+.title {
+    /* Style for the title in the details section */
+    font-size: 2.5rem; /* Large font size for title */
+    font-family: "Teko", sans-serif; /* Font for title */
+    font-weight: bold; /* Bold text for emphasis */
+    color: var(--clr2); /* Light text color */
+}
+
+.details button {
+    /* Style for buttons in the details section */
+    background-color: var(--clr4); /* Button background color */
+    color: var(--clr2); /* Light text color */
+    padding: 12px 0; /* Padding inside button */
+    margin: 12px; /* Space around button */
+    border-radius: 4px; /* Rounded corners for button */
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: bold; /* Bold text for emphasis */
+    border: none; /* Remove border */
+}
+
+.details button:hover {
+    /* Hover effect for buttons in the details section */
+    cursor: pointer; /* Pointer cursor on hover */
+    background-color: var(--clr5); /* Change background color on hover */
+}
+
+/* Responsive Layouts */
+
+/* Tablet 720px-1024px */
+@media (min-width: 720px) and (max-width: 1023px) {
+    body {
+        /* Ensure consistent background color on tablets */
+        background-color: var(--clr1); /* Use dark background */
+    }
+
+    .navbar {
+        /* Adjust navbar layout for tablets */
+        display: flex; /* Flexbox layout for navbar */
+        justify-content: space-between; /* Space out items evenly */
+        align-items: center; /* Center items vertically */
+        padding: 1em; /* Padding around navbar content */
+        background-color: var(--clr3); /* Dark background for navbar */
+    }
+    
+    .navbar .logo {
+        /* Adjust logo margin for tablets */
+        margin-left: 2em; /* Space on the left side of the logo */
+    }
+    
+    .navbar .logo a {
+        /* Adjust logo font size for tablets */
+        font-family: 'Teko', sans-serif; /* Font for logo */
+        font-size: 2em; /* Smaller font size for tablets */
+        color: var(--clr2); /* Light text color */
+        text-decoration: none; /* Remove underline from link */
+    }
+    
+    .navbar .nav-links {
+        /* Adjust nav links layout for tablets */
+        display: flex; /* Flexbox layout for links */
+        justify-content: center; /* Center align links */
+        flex-grow: 1; /* Allow links to grow */
+    }
+    
+    .navbar .nav-links a {
+        /* Adjust nav links style for tablets */
+        text-align: center; /* Center align text */
+        padding: 0; /* Remove padding */
+        margin: 0 1em; /* Space between links */
+        font-size: 1.5em; /* Smaller font size for tablets */
+        gap: 32px; /* Space between links */
+        font-family: 'Teko', sans-serif; /* Font for links */
+    }
+    
+    .navbar .search {
+        /* Adjust search section layout for tablets */
+        display: flex; /* Flexbox layout for search */
+        align-items: center; /* Center items vertically */
+        margin-right: 2em; /* Space on the right side of the search */
+    }
+
+    .movie-grid {
+        /* Adjust movie grid layout for tablets */
+        display: grid; /* Grid layout for movies */
+        grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+        grid-template-rows: repeat(3, auto); /* Three rows layout */
+        gap: 30px; /* Space between items */
+        max-width: 900px; /* Limit width */
+        width: 100%; /* Full width */
+        margin: 0 auto; /* Center align grid */
+        padding: 32px; /* Padding around grid */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    }
+
+    .movie-card {
+        /* Adjust movie card layout for tablets */
+        display: grid; /* Grid layout for card */
+        grid-template-columns: 1fr; /* Single column layout */
+        row-gap: 16px; /* Space between rows */
+        width: 100%; /* Full width */
+        border: solid var(--clr1) 2px; /* Border for card */
+        background-color: var(--clr3); /* Background color for card */
+    }
+
+    .details {
+        /* Adjust details section layout for tablets */
+        display: flex; /* Flexbox layout for details */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: space-between; /* Space out items evenly */
+        padding: 16px; /* Padding around details */
+    }
+
+    .image-container {
+        /* Ensure image container is responsive on tablets */
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .details {
+        /* Adjust details section layout for tablets */
+        display: grid; /* Grid layout for details */
+        grid-template-columns: 1fr; /* Single column layout */
+        align-items: center; /* Center align items */
+        row-gap: 16px; /* Space between rows */
+        padding: 16px; /* Padding around details */
+        margin: 0 12px; /* Space on sides */
+        p {
+            .title {
+                /* Adjust title font size for tablets */
+                font-size: 2rem; /* Smaller font size for tablets */
+                font-family: "Teko", sans-serif; /* Font for title */
+                font-weight: bold; /* Bold text for emphasis */
+            }
+        }
+
+        button {
+            /* Ensure button style consistency on tablets */
+            border-radius: 4px; /* Rounded corners for button */
+            text-transform: uppercase; /* Uppercase text */
+            font-weight: bold; /* Bold text for emphasis */
+            border: none; /* Remove border */
+        }
+    }
+}
+
+/* Desktop 1024px and up */
+@media (min-width: 1024px) {
+    
+    body {
+        /* Ensure consistent background color on desktops */
+        background-color: var(--clr1); /* Use dark background */
+    }
+
+    .movie-grid {
+        /* Adjust movie grid layout for desktops */
+        display: grid; /* Grid layout for movies */
+        grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+        grid-template-rows: repeat(5, auto); /* Five rows layout */
+        gap: 50px; /* Space between items */
+        grid-template-areas: 
+            'card1 card1'
+            'card2 card3'
+            'card4 card4'
+            'card5 card5'
+            'card6 card6'; /* Define grid areas */
+        max-width: 900px; /* Limit width */
+        width: 100%; /* Full width */
+        margin: 0 auto; /* Center align grid */
+        padding: 50px; /* Padding around grid */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    }
+
+    .movie-card {
+        /* Add shadow and adjust layout for movie cards on desktops */
+        box-shadow: 12px 12px 12px var(--clr4); /* Shadow for depth */
+        display: grid; /* Grid layout for card */
+        grid-template-columns: 1fr; /* Single column layout */
+        row-gap: 12px; /* Space between rows */
+        width: 100%; /* Full width */
+    }
+
+    #card1 {
+        /* Specific layout adjustments for card1 on desktops */
+        grid-area: card1; /* Assign grid area */
+        .image-container {
+            height: 240px; /* Set height for image container */
+            overflow: hidden; /* Hide overflow */
+            img {
+                object-fit: cover; /* Cover entire area */
+                object-position: center; /* Center image */
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+            }
+        }
+        .details {
+            display: flex; /* Flexbox layout for details */
+            flex-direction: row; /* Align items horizontally */
+            p {
+                flex: 2; /* Allow paragraph to grow */
+                align-items: center; /* Center align items */
+                min-height: 250px; /* Minimum height for paragraph */
+                margin: 0 12px; /* Space on sides */
+                font-size: 1.5em; /* Font size for paragraph */
+                text-align: left; /* Align text to the left */
+
+                .title {
+                    font-size: 2rem; /* Font size for title */
+                    font-family: "Teko", sans-serif; /* Font for title */
+                    font-weight: bold; /* Bold text for emphasis */
+                }
+            }
+            button {
+                flex: 1; /* Allow button to grow */
+                padding: 12px 0; /* Padding inside button */
+                margin: 12px; /* Space around button */
+                border-radius: 8px; /* Rounded corners for button */
+                display: flex; /* Flexbox layout for button */
+                align-items: center; /* Center align items */
+                justify-content: center; /* Center align content */
+                height: 100%; /* Full height */
+            }
+        }
+    }
+    /* Assign grid area for each remaining individual cards */
+    #card2 {
+        grid-area: card2; /* Assign grid area */
+    }
+
+    #card3 {
+        grid-area: card3; /* Assign grid area */
+    }
+
+    #card4 {
+        grid-area: card4; /* Assign grid area */
+    }
+
+    #card5 {
+        grid-area: card5; /* Assign grid area */
+    }
+
+    #card6 {
+        grid-area: card6; /* Assign grid area */
+    }
+}
+
+/* Mobile under 720px */
+@media (max-width: 719px) {
+    .navbar {
+        /* Adjust navbar layout for mobile */
+        display: flex; /* Flexbox layout for navbar */
+        justify-content: space-between; /* Space out items evenly */
+        align-items: center; /* Center items vertically */
+    }
+
+    .navbar .nav-links {
+        /* Hide navigation links on mobile */
+        display: none; /* Do not display links */
+    }
+
+    .navbar .search {
+        /* Adjust search section layout for mobile */
+        display: flex; /* Flexbox layout for search */
+        align-items: center; /* Center items vertically */
+        margin-right: 2em; /* Space on the right side of the search */
+    }
+
+    .banner-content h1 {
+        /* Adjust banner heading size for mobile */
+        font-size: 2.5em; /* Smaller font size for mobile */
+    }
+    
+    .banner-content h2 {
+        /* Adjust banner subheading size for mobile */
+        font-size: 1.25em; /* Smaller font size for mobile */
+    }
+
+    .movie-grid {
+        /* Adjust movie grid layout for mobile */
+        display: grid; /* Grid layout for movies */
+        grid-template-columns: 1fr; /* Single column layout */
+        row-gap: 24px; /* Space between rows */
+        margin: 24px 0; /* Space above and below grid */
+    }
+
+    .movie-card {
+        /* Adjust movie card layout for mobile */
+        display: grid; /* Grid layout for card */
+        grid-template-columns: 1fr; /* Single column layout */
+        row-gap: 16px; /* Space between rows */
+        width: 100%; /* Full width */
+        max-width: 1000px; /* Limit width */
+        border: solid var(--clr1) 2px; /* Border for card */
+        background-color: var(--clr3); /* Background color for card */
+        margin: 0 auto; /* Center align card */
+    }
+}

@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Josefin+Sans&display=swap'); /* Import Google Fonts for typography */
+
+/* General Styles for the entire document */
+html, body {
+    background-color: #e9e9e9; /* Light grey background for the page */
+    font-family: 'Josefin Sans', sans-serif; /* Set default font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    text-align: center; /* Center align all content */
+    min-width: 360px; /* Minimum width for mobile devices */
+}
+
+header {
+    background-color: #7c7c7c; /* Dark grey background for header */
+    padding: 20px; /* Padding around header content */
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullet points from list */
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center align navigation items */
+    gap: 20px; /* Space between navigation items */
+    margin-top: 20px;
+}
+
+nav ul li {
+    display: inline; /* Display list items inline */
+}
+
+nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: rgb(34, 34, 34); /* Dark grey text color */
+    font-family: 'Josefin Sans', sans-serif; /* Consistent font style */
+    font-size: 1.5rem; /* Font size for navigation links */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+nav a:hover {
+    color: white; /* Change text color on hover */
+}
+
+.brand-logo {
+    width: 200px; /* Set width for brand logo */
+}
+
+main {
+    background-color: white; /* White background for main content */
+    padding: 50px; /* Padding around main content */
+    margin: 0 auto; /* Center align main content */
+    max-width: 1200px; /* Limit width for readability */
+}
+
+.intro-paragraph {
+    font-size: 1.1em; /* Slightly larger text for emphasis */
+    text-align: left; /* Align text to the left */
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Protest Guerrilla', sans-serif; /* Font for headings */
+}
+
+h1 {
+    font-size: 3em; /* Large font size for main heading */
+    text-align: left; /* Align heading to the left */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+h2 {
+    font-size: 2em; /* Font size for subheadings */
+    text-align: left; /* Align subheading to the left */
+}
+
+.grid-container {
+    display: grid; /* Use grid layout for content */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between grid items */
+    margin-bottom: 30px; /* Space below grid */
+    grid-auto-flow: dense; /* Fill grid spaces efficiently */
+    align-items: start; /* Align items to the start */
+}
+
+.grid-box {
+    background-color: #f9f9f9; /* Light grey background for boxes */
+    padding: 20px; /* Padding inside grid boxes */
+    border-radius: 10px; /* Rounded corners for aesthetics */
+    break-inside: avoid; /* Prevent breaking inside grid items */
+}
+
+.grid-box h3 {
+    background-size: cover; /* Cover background for headings */
+    background-position: center; /* Center background image */
+    padding: 20px; /* Padding around heading */
+    color: black; /* Black text color */
+    font-size: 2.0rem; /* Font size for headings */
+}
+
+.grid-box p {
+    padding: 20px; /* Padding around paragraph text */
+}
+
+.image-container {
+    display: grid; /* Grid layout for images */
+    grid-template-areas: 
+        "featured featured img-1 img-2"
+        "featured featured img-3 img-4"; /* Define grid areas */
+    grid-template-columns: repeat(4, 1fr); /* Four columns layout */
+    grid-template-rows: repeat(2, 1fr); /* Two rows layout */
+    gap: 10px; /* Space between images */
+}
+
+.featured-image {
+    grid-area: featured; /* Assign area for featured image */
+    width: 100%;
+    height: 100%;
+}
+
+.thumbnail-image.img-1 {
+    grid-area: img-1; /* Assign area for first thumbnail */
+}
+
+.thumbnail-image.img-2 {
+    grid-area: img-2; /* Assign area for second thumbnail */
+}
+
+.thumbnail-image.img-3 {
+    grid-area: img-3; /* Assign area for third thumbnail */
+}
+
+.thumbnail-image.img-4 {
+    grid-area: img-4; /* Assign area for fourth thumbnail */
+}
+
+.thumbnail-image img, .featured-image img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.thumbnail-image img:hover, .featured-image img:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.author-info {
+    background: linear-gradient(135deg, #7c7c7c, #5a5a5a); /* Gradient background for author section */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+    gap: 20px; /* Space between items */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px; /* Padding around author info */
+    margin-top: 30px; /* Space above author section */
+    justify-content: center; /* Center content vertically */
+}
+
+.author-image {
+    width: 200px; /* Set width for author image */
+    height: 200px; /* Set height for author image */
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Cover image within bounds */
+    margin-bottom: 20px; /* Space below image */
+}
+
+footer {
+    background-color: #14181d; /* Dark background for footer */
+    color: white; /* White text for contrast */
+    text-align: center; /* Center align text */
+    padding: 20px; /* Padding around footer content */
+    border-top: 2px solid #7c7c7c; /* Top border for separation */
+    margin-top: 30px; /* Space above footer */
+}
+
+.author-details {
+    max-width: 600px; /* Limit width for readability */
+    text-align: center; /* Center align text */
+    padding: 0 20px; /* Padding on sides */
+}
+
+.author-details h2 {
+    text-align: left; /* Align heading to the left */
+    font-size: 2rem; /* Font size for author heading */
+}
+
+.author-details p {
+    text-align: justify; /* Justify text for neatness */
+    font-size: 1.2rem; /* Font size for author details */
+}
+
+/* Responsive Design for different screen sizes */
+@media (min-width: 360px) and (max-width: 539px) {
+    nav ul {
+        gap: 75px; /* Adjust gap for small screens */
+    }
+
+    nav a {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+
+    .brand-logo {
+        width: 80px; /* Smaller logo for mobile */
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column layout for small mobile */
+    }
+
+    .grid-box {
+        padding: 12px; /* Reduced padding for small mobile */
+    }
+
+    .image-container {
+        grid-template-areas: 
+            "img-1"
+            "img-2"
+            "img-3"
+            "img-4"; /* Single column layout for images */
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .featured-image {
+        display: none; /* Hide featured image on small mobile */
+    }
+
+    .author-image {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Space below image */
+    }
+    
+    .author-info {
+        flex-direction: column; /* Stack items vertically */
+        padding: 12px; /* Reduced padding for small mobile */
+    }
+
+    .author-details {
+        padding-left: 0; /* Remove left padding */
+        text-align: left; /* Align text to the left */
+    }
+}
+
+@media (min-width: 540px) and (max-width: 719px) {
+    nav ul {
+        gap: 125px; /* Adjust gap for large mobile */
+    }
+
+    nav a {
+        font-size: 1.2rem; /* Smaller font size for large mobile */
+    }
+
+    .brand-logo {
+        width: 80px; /* Smaller logo for large mobile */
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column layout for large mobile */
+    }
+
+    .grid-box {
+        padding: 20px; /* Standard padding for large mobile */
+    }
+
+    .image-container {
+        grid-template-areas: 
+            "img-1"
+            "img-2"
+            "img-3"
+            "img-4"; /* Single column layout for images */
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .featured-image {
+        display: none; /* Hide featured image on large mobile */
+    }
+
+    .author-image {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Space below image */
+    }
+
+    .author-info {
+        flex-direction: column; /* Stack items vertically */
+        padding: 20px; /* Standard padding for large mobile */
+    }
+
+    .author-details {
+        padding-left: 0; /* Remove left padding */
+        text-align: left; /* Align text to the left */
+    }
+}
+
+@media (min-width: 720px) and (max-width: 1023px) {
+    nav ul {
+        gap: 200px; /* Adjust gap for tablets */
+    }
+
+    nav a {
+        font-size: 1.3rem; /* Font size for tablets */
+    }
+
+    .brand-logo {
+        width: 80px; /* Smaller logo for tablets */
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column layout for tablets */
+    }
+
+    .grid-box {
+        padding: 30px; /* Standard padding for tablets */
+    }
+
+    .image-container {
+        grid-template-areas: 
+            "img-1 img-2"
+            "img-3 img-4"; /* Two columns layout for images */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .featured-image {
+        display: none; /* Hide featured image on tablets */
+    }
+
+    .author-info {
+        padding: 30px; /* Standard padding for tablets */
+    }
+
+    .author-details {
+        padding-left: 30px; /* Standard left padding for tablets */
+    }
+
+    .author-image {
+        margin-right: 30px; /* Standard right margin for tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    .author-info {
+        flex-direction: row; /* Align items horizontally */
+        justify-content: space-between; /* Space out items */
+        padding-left: 100px; /* Padding on left side for desktops */
+    }
+
+    .author-image {
+        order: 2; /* Position image to the right */
+        margin-right: 200px; /* Margin on right side for desktops */
+    }
+
+    .author-details {
+        order: 1; /* Position details to the left */
+        text-align: left; /* Align text to the left */
+        padding-right: 30px; /* Right padding for desktops */
+    }
+}
